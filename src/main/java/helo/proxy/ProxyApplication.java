@@ -1,11 +1,9 @@
 package helo.proxy;
 
-import helo.advanced.trace.logTrace.LogTrace;
-import helo.advanced.trace.logTrace.ThreadLocalLogTrace;
-import helo.proxy.config.AppV1Config;
-import helo.proxy.config.AppV2Config;
-import helo.proxy.config.AppV3Config;
-import helo.proxy.config.v1_proxy.InterfaceProxyConfig;
+import helo.proxy.trace.logTrace.LogTrace;
+import helo.proxy.trace.logTrace.ThreadLocalLogTrace;
+
+import helo.proxy.config.v2_dynamicproxy.DynamicProxyBasicConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -20,7 +18,8 @@ public class ProxyApplication {
     }
 }*/
 
-@Import(InterfaceProxyConfig.class)
+//@Import(InterfaceProxyConfig.class)
+@Import(DynamicProxyBasicConfig.class)
 @SpringBootApplication(scanBasePackages = "helo.proxy.app")
 public class ProxyApplication {
     public static void main(String[] args) {
